@@ -15,14 +15,12 @@ export default function App() {
 
 function Pages() {
   return (
-    <Routes>
-      <Route path="/dashboard">
-        <Dashboard />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/dashboard" component={ Dashboard }>
+        <Route path="/" component={ Home }>
+      </Routes>
+    </div>
   )
 
 }
