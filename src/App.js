@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 // MSAL Imports
 
@@ -15,12 +15,12 @@ export default function App() {
 
 function Pages() {
   return (
-    <div>
+    <Router>
       <Routes>
-        <Route path="/dashboard" component={ Dashboard }>
-        <Route path="/" component={ Home }>
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/" element={<Home />} />
       </Routes>
-    </div>
+    </Router>
   )
 
 }
