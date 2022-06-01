@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
-export function Home() {
+export default function Home() {
     <>
     <AuthenticatedTemplate>
         <Button component={Link} to="/dashboard" variant="contained" color="primary">

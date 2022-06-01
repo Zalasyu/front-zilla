@@ -19,8 +19,11 @@ export const callApiWithToken = async(accessToken, apiEndpoint) => {
 
     return fetch(apiEndpoint, options)
         .then(response => response.json())
-        .then((json) => {
-            console.log(json)
+        .then(response => {
+            if(response) {
+                console.log('Web API responded: ', response);
+            }
+            return response;
         })
-        .catch(error => console.log(error));
+        .catch(error => console.error(error));
 };

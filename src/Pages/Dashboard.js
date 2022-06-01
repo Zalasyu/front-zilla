@@ -3,11 +3,15 @@ import { useEffect, useState } from "react";
 // MSAL Imports
 import { MsalAuthenticationTemplate, useMsal, useAccount } from "@azure/msal-react";
 import { InteractionType, InteractionStatus, InteractionRequiredAuthError } from "@azure/msal-browser";
-import { loginRequest } from "../auth/authConfig";
+import { loginRequest, protectedResources } from "../auth/authConfig";
 
 // UI-Components
 import { Loading } from "../ui-components/Loading";
 import { ErrorComponent } from "../ui-components/ErrorComponent";
+import { DashboardData } from "../ui-components/DisplayData";
+
+// Fetch API
+import { callApiWithToken } from "../fetch";
 
 
 // Material-ui Imports
@@ -20,13 +24,13 @@ const ProtectedContent = () => {
     useEffect(() => {
         if(!apiData && account && inProgress === InteractionStatus.None) {
             const request = {
-                ...loginRequest,
+                scopes: protectedResources.apiDashboard.scopes,
                 account: account
             };
 
             instance.acquireTokenSilent(request)
             .then((response) => {
-                setApiData(response);
+                callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
             })
             .catch((err) => {
                 if(err instanceof InteractionRequiredAuthError){
@@ -37,11 +41,13 @@ const ProtectedContent = () => {
     }, [account, inProgress, instance, apiData]);
 
     return (
-        apiData
+        <>
+            { apiData ? <DashboardData apiData={apiData} /> : null}
+        </>
     )
 };
 
-export function Dashboard() {
+export default function Dashboard() {
     const authRequest = {
         ...loginRequest
     };

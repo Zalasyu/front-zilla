@@ -1,26 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {Routes, Route } from "react-router-dom";
 
 // MSAL Imports
+import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
+
 
 // Views/Pages Imports
-import { Dashboard } from "./Pages/Dashboard";
-import { Home } from "./Pages/Home";
-
+import Dashboard from "./Pages/Dashboard";
+import Home from "./Pages/Home";
+import { PageLayout } from './ui-components/PageLayout';
 
 export default function App() {
   return (
-    <Pages />
+    <PageLayout>
+      <AuthenticatedTemplate>
+        <Pages />
+      </AuthenticatedTemplate>
+      <UnauthenticatedTemplate>
+
+      </UnauthenticatedTemplate>
+
+    </PageLayout>
   );
 }
 
 function Pages() {
   return (
-    <Router>
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" exact element={<Home />} />
       </Routes>
-    </Router>
   )
 
 }

@@ -9,13 +9,14 @@ export const b2cPolicies = {
   },
   authorities: {
     signUpSignIn: {
-      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_signupsignin1"
+      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/B2C_1_signupsignin1"
     },
     forgotPassword: {
-      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_resetPassword1"
+      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/B2C_1_resetPassword1"
+      
     },
     editProfie: {
-      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/v2.0/.well-known/openid-configuration?p=B2C_1_editProfile1"
+      authority: "https://projectcentredavidev.b2clogin.com/projectcentredavidev.onmicrosoft.com/B2C_1_editProfile1"
     }
 
   },
@@ -28,7 +29,7 @@ export const b2cPolicies = {
 export const msalConfig = {
   auth: {
     clientId: "1ea6a904-f5fe-453c-9ed6-5252dc04d8d0",
-    authority: b2cPolicies.authorities.signUpSignIn.authority,
+    authority: "https://login.microsoftonline.com/deb74ed9-329d-4a0b-8a37-c9cb058450a9",
     knownAuthorities: [b2cPolicies.authorityDomain],
     redirectUri: "http://localhost:3000",
     postLogoutRedirectUri: "http://localhost:3000",
@@ -64,7 +65,8 @@ export const msalConfig = {
           default:
             // Do Nothing
         }
-      }
+      },
+      logLevel: LogLevel.Verbose
     }
   }
 };
@@ -86,6 +88,6 @@ export const protectedResources = {
  * */
 
 export const loginRequest = {
-  scopes: [...protectedResources.apiDashboard.scopes]
+  scopes: ["openid", ...protectedResources.apiDashboard.scopes]
 };
 

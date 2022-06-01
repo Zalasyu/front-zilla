@@ -1,0 +1,17 @@
+import React from "react";
+import { useIsAuthenticated } from "@azure/msal-react";
+import { SignInButton } from "./SignInRedirect";
+
+// TODO: Add Sidebar
+export const PageLayout = (props) => {
+    const isAuthenticated = useIsAuthenticated();
+
+    return (
+        <>
+        { isAuthenticated ? <span>Signed In</span> : <SignInButton /> }
+        <br />
+        <h5><center> Minds & Music </center></h5>
+        {props.children}
+        </>
+    );
+};
