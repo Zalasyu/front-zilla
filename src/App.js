@@ -16,7 +16,7 @@ export default function App() {
         <Pages />
       </AuthenticatedTemplate>
       <UnauthenticatedTemplate>
-
+        <p>You are not signed in!</p>
       </UnauthenticatedTemplate>
 
     </PageLayout>
