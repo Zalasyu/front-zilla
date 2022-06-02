@@ -62,7 +62,7 @@ const routes = [
   },
 ];
 
-const VenueSideBar = ({ children }) => {
+const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
   const inputAnimation = {
@@ -196,4 +196,4 @@ const VenueSideBar = ({ children }) => {
   );
 };
 
-export default VenueSideBar;
+export default SideBar;
