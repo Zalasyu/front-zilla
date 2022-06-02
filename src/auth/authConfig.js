@@ -29,7 +29,7 @@ export const b2cPolicies = {
 export const msalConfig = {
   auth: {
     clientId: "1ea6a904-f5fe-453c-9ed6-5252dc04d8d0",
-    authority: "https://login.microsoftonline.com/deb74ed9-329d-4a0b-8a37-c9cb058450a9",
+    authority: b2cPolicies.authorities.signUpSignIn.authority,
     knownAuthorities: [b2cPolicies.authorityDomain],
     redirectUri: "http://localhost:3000",
     postLogoutRedirectUri: "http://localhost:3000",
