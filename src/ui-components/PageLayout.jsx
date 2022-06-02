@@ -12,16 +12,18 @@ export const PageLayout = (props) => {
 
     return (
         <>
-        { isAuthenticated ? <span>Signed In</span> : <SignInButton /> }
-        <br />
-        <h5><center> Minds & Music </center></h5>
-        {props.children}
+            {isAuthenticated ? <span>Signed In</span> : <SignInButton />}
+            <br />
+            <h5><center> Minds & Music </center></h5>
+            {props.children}
 
-<div className="container">
-        <div className="Sidebar">
-        <SideBar/>
-        </div>
-        </div>
+
+
+            <div className="container">
+                <div className="Sidebar">
+                    <SideBar />
+                </div>
+            </div>
         </>
     );
 };
