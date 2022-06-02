@@ -1,7 +1,7 @@
 import React from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
 import { SignInButton } from "./SignInRedirect";
-
+import { SignOutButton } from "./SignOut";
 //Sidebar implementation from Sidebar folder
 import SideBar from "./Sidebar/SideBar";
 
