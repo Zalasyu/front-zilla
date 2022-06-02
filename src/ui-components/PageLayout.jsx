@@ -1,6 +1,7 @@
 import React from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
 import { SignInButton } from "./SignInRedirect";
+import { SignOutButton } from "./SignOut";
 
 // TODO: Add Sidebar
 export const PageLayout = (props) => {
@@ -8,7 +9,7 @@ export const PageLayout = (props) => {
 
     return (
         <>
-        { isAuthenticated ? <span>Signed In</span> : <SignInButton /> }
+        { isAuthenticated ? <SignOutButton /> : <SignInButton /> }
         <br />
         <h5><center> Minds & Music </center></h5>
         {props.children}
