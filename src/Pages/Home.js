@@ -1,10 +1,11 @@
+import React from "react";
 import { AuthenticatedTemplate, UnauthenticatedTemplate } from "@azure/msal-react";
 import { Button } from "@mui/material";
 import { Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-    <>
+    return(<>
     <AuthenticatedTemplate>
         <Button component={Link} to="/dashboard" variant="contained" color="primary">
             Request Access Token for Dashboard Web API
@@ -18,4 +19,5 @@ export default function Home() {
         </Typography>
     </UnauthenticatedTemplate>
     </>
+    )
 };

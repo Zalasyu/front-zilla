@@ -11,7 +11,9 @@ function handleLogout(instance) {
 export const SignOutButton = () => {
     const { instance } = useMsal();
     return (
-        <Button variant = "secondary" onClick={()=>handleLogout(instance)}>
+        <Button 
+        variant="contained" color="secondary" 
+        onClick={()=>handleLogout(instance)}>
             Sign out
         </Button>
     )

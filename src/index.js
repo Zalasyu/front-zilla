@@ -8,6 +8,10 @@ import { msalConfig } from './auth/authConfig';
 import { PublicClientApplication } from '@azure/msal-browser';
 import { MsalProvider } from '@azure/msal-react';
 
+// Styles
+import { ThemeProvider } from '@mui/material';
+import { theme } from "./styles/theme";
+
 // Initialize MSAL insance
 // Should be instantiated outside of the component tree to prevent it
 // from being re-instantiated on re-renders.
@@ -21,9 +25,11 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <Router>
-    <MsalProvider instance={msalInstance}>
-      <App />
-    </MsalProvider>
+    <ThemeProvider theme={theme}>
+      <MsalProvider instance={msalInstance}>
+        <App />
+      </MsalProvider>
+    </ThemeProvider>
   </Router>
 
 );

@@ -13,6 +13,10 @@ function handleLogin(instance){
 export const SignInButton = () => {
     const { instance } = useMsal();
     return (
-        <Button variant="contained" color="primary" onClick={()=> {handleLogin(instance)}}>Sign in</Button>
+        <Button 
+        variant="contained" color="primary" 
+        onClick={()=> {handleLogin(instance)}}>
+            Sign in
+        </Button>
     )
 }
