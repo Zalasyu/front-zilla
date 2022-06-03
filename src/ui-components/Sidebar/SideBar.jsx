@@ -166,6 +166,7 @@ const SideBar = ({ children }) => {
                 return (
                   <SidebarMenu
                     setIsOpen={setIsOpen}
+                    key={index}
                     route={route}
                     showAnimation={showAnimation}
                     isOpen={isOpen}
