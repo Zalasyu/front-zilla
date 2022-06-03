@@ -15,14 +15,14 @@ export const PageLayout = (props) => {
             {props.children}
 
 
-{ isAuthenticated &&
+
 
             <div className="container">
                 <div className="Sidebar">
                     <SideBar />
                 </div>
             </div>
-}
+
         </>
     );
 };
