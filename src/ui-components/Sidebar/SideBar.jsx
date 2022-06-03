@@ -12,6 +12,9 @@ import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import SidebarMenu from "./SidebarMenu";
 import './Sidebar.css';
 
+// TODO: Link the dashboard icon to route.
+// TODO: For the dashboard route item. You would invoke Dashboard.jsx
+// TODO: Include SignInSignOutButton.
 const routes = [
   {
       //change icon to a graph
@@ -64,6 +67,7 @@ const routes = [
     name: "Support",
     icon: <MdOutlineContactSupport />,
   },
+
 ];
 
 const SideBar = ({ children }) => {

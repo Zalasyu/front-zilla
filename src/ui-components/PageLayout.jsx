@@ -1,9 +1,8 @@
 import React from "react";
 import { useIsAuthenticated } from "@azure/msal-react";
-import { SignInButton } from "./SignInOrSignOut/SignInButton";
-import { SignOutButton } from "./SignInOrSignOut/SignOutButton";
 //Sidebar implementation from Sidebar folder
 import SideBar from "./Sidebar/SideBar";
+import SignInSignOutButton from "./SignInOrSignOut/SignInSignOutButton";
 
 
 export const PageLayout = (props) => {
@@ -11,9 +10,8 @@ export const PageLayout = (props) => {
 
     return (
         <>
-             { isAuthenticated ? <SignOutButton /> : <SignInButton /> }
-            <br />
-            <h5><center> Minds & Music </center></h5>
+            <SignInSignOutButton />
+            <h1><center> Minds & Music </center></h1>
             {props.children}
 
 
