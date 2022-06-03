@@ -15,8 +15,6 @@ export const callApiWithToken = async(accessToken, apiEndpoint) => {
         headers: headers
     };
 
-    console.log(apiEndpoint);
-
     return fetch(apiEndpoint, options)
         .then(response => response.json())
         .then(response => {
