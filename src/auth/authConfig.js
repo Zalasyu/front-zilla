@@ -75,7 +75,7 @@ export const msalConfig = {
 export const protectedResources = {
   apiDashboard: {
     endpoint: "http://localhost:3001/dashboard",
-    scopes: ["https://projectcentredavidev.onmicrosoft.com/3826b32a-9c26-4f75-9c01-eed32248f36b/dash.Read"]
+    scopes: ["https://projectcentredavidev.onmicrosoft.com/api/dash.Read"]
   },
   apiHome: {
     endpoint: "http://localhost:3001/",

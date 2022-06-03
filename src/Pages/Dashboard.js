@@ -29,11 +29,13 @@ const DashContent = () => {
                 account: account
             };
 
-            console.log(request);
+            debugger;
+            {console.log(request)}
 
             // Get Access Token with current account with it's permitted scopes.
             instance.acquireTokenSilent(request)
             .then((response) => {
+                {console.log(response);}
                 callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
             })
             .catch((err) => {
