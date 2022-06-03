@@ -4,20 +4,20 @@ import { useEffect, useState } from "react";
 // MSAL Imports
 import { MsalAuthenticationTemplate, useMsal, useAccount } from "@azure/msal-react";
 import { InteractionType, InteractionStatus, InteractionRequiredAuthError } from "@azure/msal-browser";
-import { loginRequest, protectedResources } from "../auth/authConfig";
 
 // UI-Components
 import { Loading } from "../ui-components/Loading";
 import { ErrorComponent } from "../ui-components/ErrorComponent";
 import { DashboardData } from "../ui-components/DisplayData";
 
-// Fetch API
+// API Call related Imports
 import { callApiWithToken } from "../fetch";
+import { loginRequest, protectedResources } from "../auth/authConfig";
 
 
 // Material-ui Imports
 
-const ProtectedContent = () => {
+const DashContent = () => {
     const { instance, accounts, inProgress } = useMsal();
     const account = useAccount(accounts[0] || {});
     const [apiData, setApiData] = useState(null);
@@ -29,13 +29,23 @@ const ProtectedContent = () => {
                 account: account
             };
 
+            console.log(request);
+
+            // Get Access Token with current account with it's permitted scopes.
             instance.acquireTokenSilent(request)
             .then((response) => {
                 callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
             })
             .catch((err) => {
                 if(err instanceof InteractionRequiredAuthError){
-                    instance.acquireTokenRedirect(request);
+                    if( account && inProgress === "none") {
+                        instance.acquireTokenPopup({
+                            scopes: protectedResources.apiDashboard.scopes
+                        })
+                        .then((response) => {
+                            callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
+                        }).catch(error => console.log(error));
+                    }
                 }
             });
         }
@@ -58,7 +68,7 @@ export default function Dashboard() {
         authenticationRequest={authRequest}
         errorComponent={ErrorComponent}
         loadingComponent={Loading}>
-            <ProtectedContent />
+            <DashContent />
         </MsalAuthenticationTemplate>
     )
 }

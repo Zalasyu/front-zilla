@@ -11,7 +11,7 @@ const SignInSignOutButton = () => {
     if (isAuthenticated) {
         return < SignOutButton />;
     } else if (inProgress !== InteractionStatus.Startup && inProgress !== InteractionStatus.HandleRedirect) {
-        return <SignOutButton />;
+        return <SignInButton />;
     } else {
         return null;
     }
