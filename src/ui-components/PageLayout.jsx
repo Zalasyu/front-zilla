@@ -10,7 +10,9 @@ export const PageLayout = (props) => {
 
     return (
         <>
-       
+           
+            <h1><center> Minds & Music </center></h1>
+            {props.children}
 
 
 
