@@ -10,6 +10,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import SidebarMenu from "./SidebarMenu";
+import SignInSignOutButton from "../SignInOrSignOut/SignInSignOutButton";
 import './Sidebar.css';
 
 // TODO: Link the dashboard icon to route.
