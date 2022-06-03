@@ -14,10 +14,6 @@ export const DashboardData = (props) => {
         <>
         <div className="data-area-div">
             <p>Calling <strong>custom protected web API</strong>...</p>
-            <ul>
-                <li><strong>endpoint:</strong> <mark>{protectedResources.apiHello.endpoint}</mark></li>
-                <li><strong>scope:</strong> <mark>{protectedResources.apiHello.scopes[0]}</mark></li>
-            </ul>
             <p>Contents of the <strong>response</strong> is below:</p>
         </div>
         <div className="data-area-div">
