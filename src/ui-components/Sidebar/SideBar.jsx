@@ -2,7 +2,8 @@ import React from "react";
 //react icon imports
 import { FaBars,  FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
 import { MdLocationOn, MdOutlineContactSupport } from "react-icons/md";
-import { BsPeopleFill, BsFillCalendarFill} from "react-icons/bs"
+import { AiFillHome} from "react-icons/ai"
+import { BsPeopleFill} from "react-icons/bs"
 import {GoGraph, GoCalendar} from "react-icons/go"
 import { BiCog } from "react-icons/bi";
 //react icon imports ends here
@@ -13,16 +14,19 @@ import SidebarMenu from "./SidebarMenu";
 import SignInSignOutButton from "../SignInOrSignOut/SignInSignOutButton";
 import './Sidebar.css';
 
-// TODO: Link the dashboard icon to route.
-// TODO: For the dashboard route item. You would invoke Dashboard.jsx
-// TODO: Include SignInSignOutButton.
 const routes = [
   {
       //change icon to a graph
-    path: "/home",
-    name: "Home",
+    path: "/dashboard",
+    name: "Dashboard",
     icon: <GoGraph />,
   },
+  {
+    //change icon to a graph
+  path: "/home",
+  name: "Home",
+  icon: <AiFillHome />,
+},
   {
       //change icon to a calendar
     path: "/yourevents",
