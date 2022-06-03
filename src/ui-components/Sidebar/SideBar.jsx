@@ -172,6 +172,7 @@ const SideBar = ({ children }) => {
                     showAnimation={showAnimation}
                     isOpen={isOpen}
                   />
+                  
                 );
               }
 
@@ -185,6 +186,8 @@ const SideBar = ({ children }) => {
                   <div className="icon">{route.icon}</div>
                   <AnimatePresence>
                     {isOpen && (
+
+                    //for route text in the sidebar
                       <motion.div
                         variants={showAnimation}
                         initial="hidden"
@@ -194,15 +197,19 @@ const SideBar = ({ children }) => {
                       >
                         {route.name}
                       </motion.div>
+                     
                     )}
+                    
                   </AnimatePresence>
                 </NavLink>
               );
             })}
           </section>
+         
         </motion.div>
-
+        
         <main>{children}</main>
+       
       </div>
     </>
   );
