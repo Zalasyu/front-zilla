@@ -196,16 +196,26 @@ const SideBar = ({ children }) => {
                         className="link_text"
                       >
                         {route.name}
+                        
                       </motion.div>
                      
                     )}
                     
                   </AnimatePresence>
+                
                 </NavLink>
+                  
               );
+             
             })}
           </section>
-         
+
+           {/* Sign in Sign Out button implemented into sidebar */}
+          <div className="SignInSignOut">
+            <SignInSignOutButton />
+          </div>
+
+
         </motion.div>
         
         <main>{children}</main>
