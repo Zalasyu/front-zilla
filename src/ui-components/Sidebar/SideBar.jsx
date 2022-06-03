@@ -12,13 +12,15 @@ import './Sidebar.css';
 
 const routes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
+      //change icon to a graph
+    path: "/home",
+    name: "Home",
     icon: <FaHome />,
   },
   {
-    path: "/events",
-    name: "Events",
+      //change icon to a calendar
+    path: "/yourevents",
+    name: "Your Events",
     icon: <BsFillExclamationCircleFill />,
   },
   {
@@ -38,11 +40,11 @@ const routes = [
     icon: <BiCog />,
     exact: true,
     subRoutes: [
-      {
-        path: "/settings/profile",
-        name: "Profile ",
-        icon: <FaUser />,
-      },
+    //   {
+    //     path: "/settings/profile",
+    //     name: "Profile ",
+    //     icon: <FaUser />,
+    //   },
       {
         path: "/settings/2fa",
         name: "2FA",
@@ -115,6 +117,8 @@ const SideBar = ({ children }) => {
           className={`sidebar `}
         >
           <div className="top_section">
+
+        
             <AnimatePresence>
               {isOpen && (
                 <motion.h1
