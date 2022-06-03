@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "firefox",
+            "request": "attach",
+            "name": "Attach to Firefox",
+            "port": 3000
+        },
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Debug",
+            "url": "http://localhost/3000",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
