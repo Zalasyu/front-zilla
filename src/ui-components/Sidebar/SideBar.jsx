@@ -1,7 +1,8 @@
 //react icon imports
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
+import { FaBars,  FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
 import { MdLocationOn, MdOutlineContactSupport } from "react-icons/md";
-import { BsPeopleFill, BsFillExclamationCircleFill } from "react-icons/bs"
+import { BsPeopleFill, BsFillCalendarFill} from "react-icons/bs"
+import {GoGraph, GoCalendar} from "react-icons/go"
 import { BiCog } from "react-icons/bi";
 //react icon imports ends here
 import { NavLink } from "react-router-dom";
@@ -15,13 +16,13 @@ const routes = [
       //change icon to a graph
     path: "/home",
     name: "Home",
-    icon: <FaHome />,
+    icon: <GoGraph />,
   },
   {
       //change icon to a calendar
     path: "/yourevents",
     name: "Your Events",
-    icon: <BsFillExclamationCircleFill />,
+    icon: <GoCalendar/>,
   },
   {
     path: "/eventsnearyou",
