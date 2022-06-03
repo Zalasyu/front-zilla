@@ -1,3 +1,4 @@
+import React from "react";
 //react icon imports
 import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
 import { MdLocationOn, MdOutlineContactSupport } from "react-icons/md";
@@ -6,7 +7,7 @@ import { BiCog } from "react-icons/bi";
 //react icon imports ends here
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import SidebarMenu from "./SidebarMenu";
 import './Sidebar.css';
 

@@ -8,7 +8,9 @@ export default function Home() {
     return(<>
     <AuthenticatedTemplate>
         <Button component={Link} to="/dashboard" variant="contained" color="primary">
-            Request Access Token for Dashboard Web API
+            <center>
+                Request Access Token for Dashboard Web API
+            </center>
         </Button>
     </AuthenticatedTemplate>
     <UnauthenticatedTemplate>
