@@ -279,25 +279,13 @@ const SideBar = ({ children }) => {
  } */}
            {/* Sign in Sign Out button implemented into sidebar */}
 
-           <AnimatePresence>
-                    {isOpen && (
-
-                    //for Sign In and Sign Out button in the sidebar
-                      <motion.div
-                        variants={loginLogoutAnimation}
-                        initial="show"
-                        className="SignInSignOut"
-                      >
-                        <SignInSignOutButton />
-                        
-                      </motion.div>
-                     
-                    )}
-                    
-                  </AnimatePresence>
-        
-
+        <div className="SignInSignOut">
+                  <SignInSignOutButton />
+                  </div>
+                  
         </motion.div>
+
+
         
         <main>{children}</main>
        
