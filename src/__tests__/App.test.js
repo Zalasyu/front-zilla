@@ -32,19 +32,15 @@ describe('Sanitize configuration object', () => {
 describe('Ensure that the app starts', () => {
     beforeAll(() => {
         global.crypto = require('crypto');
-        global.msalConfig = require('./authConfig.js').msalConfig;
+        global.msalConfig = require('../auth/authConfig.js').msalConfig;
         global.msalInstance = new PublicClientApplication(msalConfig);
     
         expect(msalInstance).toBeDefined();
         expect(msalInstance).toBeInstanceOf(PublicClientApplication);
     });
 
-    it('should render the app without crashing', () => {
-        const div = document.createElement('div');
-
-        act(() => {
-            ReactDOM.render(<App msalInstance={msalInstance} />, div);
-        });
-        expect(div.textContent).toBe("Microsoft identity platformWelcome to the Microsoft Authentication Library For React Tutorial");
+    it('should initialize MSAL', () => {
+        expect(msalInstance).toBeDefined();
+        expect(msalInstance).toBeInstanceOf(PublicClientApplication);
     });
 });

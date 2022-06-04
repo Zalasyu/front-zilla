@@ -15,13 +15,7 @@ import { PageLayout } from './ui-components/PageLayout';
 export default function App() {
   return (
     <PageLayout>
-      <AuthenticatedTemplate>
-        <Pages />
-      </AuthenticatedTemplate>
-      <UnauthenticatedTemplate>
-        <p>You are not signed in!</p>
-      </UnauthenticatedTemplate>
-
+      <Pages />
     </PageLayout>
   );
 }

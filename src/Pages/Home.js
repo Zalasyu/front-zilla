@@ -7,11 +7,14 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return(<>
     <AuthenticatedTemplate>
+        <center>
         <Button component={Link} to="/dashboard" variant="contained" color="primary">
             <center>
                 Request Access Token for Dashboard Web API
             </center>
         </Button>
+
+        </center>
     </AuthenticatedTemplate>
     <UnauthenticatedTemplate>
         <Typography variant="h6">

@@ -12,6 +12,7 @@ export const DashboardData = (props) => {
 
     return (
         <>
+        <center>
         <div className="data-area-div">
             <p>Calling <strong>custom protected web API</strong>...</p>
             <ul>
@@ -29,6 +30,8 @@ export const DashboardData = (props) => {
                 </tbody>
             </table>
         </div>
+
+        </center>
         </>
     );
 }

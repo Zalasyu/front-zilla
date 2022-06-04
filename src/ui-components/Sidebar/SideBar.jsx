@@ -135,21 +135,6 @@ const SideBar = ({ children }) => {
         >
           <div className="top_section">
 
-        
-            <AnimatePresence>
-              {isOpen && (
-                <motion.h1
-                  variants={showAnimation}
-                  initial="hidden"
-                  animate="show"
-                  exit="hidden"
-                  className="logo"
-                >
-                 Minds & Music
-                </motion.h1>
-              )}
-            </AnimatePresence>
-
             <div className="bars">
               <FaBars onClick={toggle} />
             </div>
