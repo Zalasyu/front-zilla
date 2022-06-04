@@ -8,7 +8,7 @@ import {GoGraph, GoCalendar} from "react-icons/go"
 import { BiCog } from "react-icons/bi";
 
 // Material MUI Import
-import { Tooltip, IconButton } from "@mui/material";
+import { Tooltip, IconButton, Icon } from "@mui/material";
 //react icon imports ends here
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
@@ -45,18 +45,33 @@ const routes = [
   {
     path: "/eventsnearyou",
     name: "Events near you",
-    icon: <MdLocationOn/>,
+    icon: 
+    <Tooltip title="Click to find events near you!" arrow>
+      <IconButton>
+    <MdLocationOn/>
+    </IconButton>
+    </Tooltip>
   },
   {
     path: "/fansnearyou",
     name: "Fans near you",
-    icon: <BsPeopleFill/>,
+    icon: 
+    <Tooltip title="Click to find fans near you!" arrow>
+      <IconButton>
+    <BsPeopleFill/>
+    </IconButton>
+    </Tooltip>
   },
 
   {
     path: "/settings",
     name: "Settings",
-    icon: <BiCog />,
+    icon: 
+    <Tooltip title="Click to change your settings" arrow>
+      <IconButton>
+    <BiCog />
+    </IconButton>
+    </Tooltip>,
     exact: true,
     subRoutes: [
     //   {
@@ -67,19 +82,34 @@ const routes = [
       {
         path: "/settings/2fa",
         name: "2FA",
-        icon: <FaLock />,
+        icon: 
+        <Tooltip title="Click to setup two-factor authentication" arrow>
+          <IconButton>
+        <FaLock />
+        </IconButton>
+        </Tooltip>
       },
       {
         path: "/settings/billing",
         name: "Billing",
-        icon: <FaMoneyBill />,
+        icon: 
+        <Tooltip title="Click to check billings" arrow>
+          <IconButton>
+          <FaMoneyBill />
+          </IconButton>
+          </Tooltip>
       },
     ],
   },
   {
     path: "/support",
     name: "Support",
-    icon: <MdOutlineContactSupport />,
+    icon: 
+    <Tooltip title="Click to contact support" arrow>
+      <IconButton>
+    <MdOutlineContactSupport />
+    </IconButton>
+    </Tooltip>
   },
 
 
