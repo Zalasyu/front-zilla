@@ -90,20 +90,23 @@ const routes = [
 const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  //importing Authenication via MSAL
   const isAuthenticated = useIsAuthenticated()
-  const inputAnimation = {
+
+  const loginLogoutAnimation = {
     hidden: {
       width: 0,
       padding: 0,
       transition: {
-        duration: 0.1,
+        duration: 0.3,
       },
     },
     show: {
-      
+      opacity: 1,
+      width: "auto",
     
       transition: {
-        duration: 0.2,
+        duration: 0.8,
       },
     },
   };
@@ -250,7 +253,7 @@ const SideBar = ({ children }) => {
 
                     //for Sign In and Sign Out button in the sidebar
                       <motion.div
-                        variants={inputAnimation}
+                        variants={loginLogoutAnimation}
                         initial={false}
                         animate="show"
                         exit="hidden"
