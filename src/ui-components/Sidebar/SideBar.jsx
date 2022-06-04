@@ -255,8 +255,6 @@ const SideBar = ({ children }) => {
                       <motion.div
                         variants={loginLogoutAnimation}
                         initial={false}
-                        animate="show"
-                        exit="hidden"
                         className="SignInSignOut"
                       >
                         <SignInSignOutButton />
