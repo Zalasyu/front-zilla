@@ -32,7 +32,7 @@ const routes = [
   },
   {
  
-  path: "/home",
+  path: "/",
   name: "Home",
   icon: 
   <Tooltip title="Go to the Home Page" arrow>
@@ -161,7 +161,7 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "160px" : "50px",
+            width: isOpen ? "200px" : "80px",
 
             transition: {
               duration: 0.5,

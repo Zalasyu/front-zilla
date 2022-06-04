@@ -10,6 +10,11 @@ export const PageLayout = (props) => {
 
     return (
         <>
+            <div className="container">
+                <div className="Sidebar">
+                    <SideBar />
+                </div>
+            </div>
            
             <h1><center> Minds & Music </center></h1>
             {props.children}
@@ -17,11 +22,6 @@ export const PageLayout = (props) => {
 
 
 
-            <div className="container">
-                <div className="Sidebar">
-                    <SideBar />
-                </div>
-            </div>
 
         </>
     );

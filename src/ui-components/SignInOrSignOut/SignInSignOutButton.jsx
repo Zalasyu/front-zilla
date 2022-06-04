@@ -18,7 +18,7 @@ const SignInSignOutButton = () => {
     if (isAuthenticated) {
         return ( 
         <Tooltip title='Click to Sign Out' arrow>
-            <IconButton>
+            <IconButton size='small' edge='start'>
                 <SignOutButton />
             </IconButton>
         </Tooltip>
@@ -27,7 +27,7 @@ const SignInSignOutButton = () => {
         return( 
         
         <Tooltip title='Click to Sign In' arrow>
-            <IconButton>
+            <IconButton size='small'>
                 <SignInButton />
             </IconButton>
         </Tooltip>

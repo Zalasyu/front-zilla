@@ -22,6 +22,7 @@
   
   /* Sidebar */
   .sidebar {
+    position:fixed;
     background: rgb(221, 138, 13);
     color: white;
     height: 100vh;

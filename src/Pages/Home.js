@@ -6,11 +6,14 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
     return(<>
+            <center>
+                Welcome to the Home page of Minds & Music!
+            </center>
     <AuthenticatedTemplate>
         <center>
         <Button component={Link} to="/dashboard" variant="contained" color="primary">
             <center>
-                Request Access Token for Dashboard Web API
+                Request Access Token for Dashboard Service
             </center>
         </Button>
 
