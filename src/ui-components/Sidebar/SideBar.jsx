@@ -134,7 +134,7 @@ const SideBar = ({ children }) => {
       <div className="main-container">
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? "160px" : "50px",
 
             transition: {
               duration: 0.5,
@@ -147,7 +147,11 @@ const SideBar = ({ children }) => {
           <div className="top_section">
 
             <div className="bars">
-              <FaBars onClick={toggle} />
+              <Tooltip title="Click to expand your side bar!" arrow>
+                <IconButton>
+                  <FaBars onClick={toggle} />
+                </IconButton>
+              </Tooltip>
             </div>
           </div>
         
