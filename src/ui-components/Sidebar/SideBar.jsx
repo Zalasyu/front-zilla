@@ -12,6 +12,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion/dist/framer-motion";
 import SidebarMenu from "./SidebarMenu";
 import SignInSignOutButton from "../SignInOrSignOut/SignInSignOutButton";
+import { useIsAuthenticated } from "@azure/msal-react";
 import './Sidebar.css';
 
 const routes = [
@@ -81,6 +82,7 @@ const routes = [
 const SideBar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+  const isAuthenticated = useIsAuthenticated()
   const inputAnimation = {
     hidden: {
       width: 0,
@@ -117,6 +119,7 @@ const SideBar = ({ children }) => {
 
   return (
     <>
+    
       <div className="main-container">
         <motion.div
           animate={{
@@ -168,6 +171,7 @@ const SideBar = ({ children }) => {
               )}
             </AnimatePresence>
           </div> */}
+          {isAuthenticated &&
           <section className="routes">
             {routes.map((route, index) => {
               if (route.subRoutes) {
@@ -179,8 +183,9 @@ const SideBar = ({ children }) => {
                     showAnimation={showAnimation}
                     isOpen={isOpen}
                   />
-                  
-                );
+               
+                ); 
+              
               }
 
               return (
@@ -216,7 +221,7 @@ const SideBar = ({ children }) => {
              
             })}
           </section>
-
+ }
            {/* Sign in Sign Out button implemented into sidebar */}
           <div className="SignInSignOut">
             <SignInSignOutButton />
