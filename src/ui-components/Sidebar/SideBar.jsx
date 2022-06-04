@@ -96,12 +96,12 @@ const SideBar = ({ children }) => {
       width: 0,
       padding: 0,
       transition: {
-        duration: 0.2,
+        duration: 0.1,
       },
     },
     show: {
-      width: "140px",
-      padding: "5px 15px",
+      
+    
       transition: {
         duration: 0.2,
       },
@@ -244,11 +244,26 @@ const SideBar = ({ children }) => {
           </section>
  } */}
            {/* Sign in Sign Out button implemented into sidebar */}
-           <center>
-          <div className="SignInSignOut">
-            <SignInSignOutButton />
-          </div>
-          </center>
+
+           <AnimatePresence>
+                    {isOpen && (
+
+                    //for Sign In and Sign Out button in the sidebar
+                      <motion.div
+                        variants={inputAnimation}
+                        initial={false}
+                        animate="show"
+                        exit="hidden"
+                        className="SignInSignOut"
+                      >
+                        <SignInSignOutButton />
+                        
+                      </motion.div>
+                     
+                    )}
+                    
+                  </AnimatePresence>
+        
 
         </motion.div>
         
