@@ -14,11 +14,18 @@ export const DashboardData = (props) => {
         <>
         <center>
         <div className="data-area-div">
-            <p>Calling <strong>custom protected web API</strong>...</p>
+            <p>Calling <strong>Dashboard Microservice</strong>...</p>
+            <br/> 
+            <div>
+                <p>The front end requests an access token from another service and acquires an access token.</p>
+                <p>The back end verifies if the token is valid and if the user is permitted access to the resource.</p>
+            </div>
+            <br />
             <ul>
                 <li><strong>endpoint:</strong> <mark>{protectedResources.apiDashboard.endpoint}</mark></li>
                 <li><strong>scope:</strong> <mark>{protectedResources.apiDashboard.scopes[0]}</mark></li>
             </ul>
+            <br />
             <p>Contents of the <strong>response</strong> is below:</p>
         </div>
         <div className="data-area-div">

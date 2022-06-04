@@ -16,7 +16,6 @@ export const PageLayout = (props) => {
                 </div>
             </div>
            
-            <h1><center> Minds & Music </center></h1>
             {props.children}
 
 
