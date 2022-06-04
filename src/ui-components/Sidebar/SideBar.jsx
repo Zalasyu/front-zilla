@@ -6,6 +6,9 @@ import { AiFillHome} from "react-icons/ai"
 import { BsPeopleFill} from "react-icons/bs"
 import {GoGraph, GoCalendar} from "react-icons/go"
 import { BiCog } from "react-icons/bi";
+
+// Material MUI Import
+import { Tooltip, IconButton } from "@mui/material";
 //react icon imports ends here
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
@@ -20,19 +23,24 @@ const routes = [
       
     path: "/dashboard",
     name: "Dashboard",
-    icon: <GoGraph />,
+    icon: 
+    <Tooltip title='Go to your Dashboard' arrow>
+      <IconButton>
+        <GoGraph />
+      </IconButton>
+    </Tooltip>,
   },
   {
  
   path: "/home",
   name: "Home",
-  icon: <AiFillHome />,
-},
-  {
-    
-    path: "/yourevents",
-    name: "Your Events",
-    icon: <GoCalendar/>,
+  icon: 
+  <Tooltip title="Go to the Home Page" arrow>
+    <IconButton>
+      <AiFillHome />
+    </IconButton>
+  </Tooltip>
+
   },
   {
     path: "/eventsnearyou",

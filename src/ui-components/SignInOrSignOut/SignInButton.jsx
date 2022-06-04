@@ -2,6 +2,8 @@ import React from "react";
 import { useMsal } from "@azure/msal-react";
 import { loginRequest } from "../../auth/authConfig";
 import { Button } from "@mui/material";
+import LoginIcon from '@mui/icons-material/Login';
+
 
 function handleLogin(instance){
     instance.loginRedirect(loginRequest).catch(e => {
@@ -16,7 +18,7 @@ export const SignInButton = () => {
         <Button 
         variant="contained" color="primary" 
         onClick={()=> {handleLogin(instance)}}>
-            Sign in
+            <LoginIcon />
         </Button>
     )
 }

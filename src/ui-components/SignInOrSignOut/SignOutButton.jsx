@@ -1,6 +1,7 @@
 import React from "react";
 import { useMsal } from "@azure/msal-react";
 import { Button } from "@mui/material";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function handleLogout(instance) {
     instance.logoutRedirect().catch( e => {
@@ -14,7 +15,7 @@ export const SignOutButton = () => {
         <Button 
         variant="contained" color="secondary" 
         onClick={()=>handleLogout(instance)}>
-            Sign out
+            <LogoutIcon />
         </Button>
     )
 }
