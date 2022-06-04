@@ -26,7 +26,7 @@ const SignInSignOutButton = () => {
     } else if (inProgress !== InteractionStatus.Startup && inProgress !== InteractionStatus.HandleRedirect) {
         return( 
         
-        <Tooltip title='Click to Sign Out' arrow>
+        <Tooltip title='Click to Sign In' arrow>
             <IconButton>
                 <SignInButton />
             </IconButton>
