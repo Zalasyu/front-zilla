@@ -236,10 +236,11 @@ const SideBar = ({ children }) => {
           </section>
  } */}
            {/* Sign in Sign Out button implemented into sidebar */}
+           <center>
           <div className="SignInSignOut">
             <SignInSignOutButton />
           </div>
-
+          </center>
 
         </motion.div>
         
