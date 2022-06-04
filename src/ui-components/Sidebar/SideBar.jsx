@@ -104,7 +104,6 @@ const routes = [
   {
     path: "/support",
     name: "Support",
-<<<<<<< HEAD
     icon: 
     <Tooltip title="Click to contact support" arrow>
       <IconButton>
@@ -115,10 +114,6 @@ const routes = [
 
 
 
-=======
-    icon: <MdOutlineContactSupport />,
-  }
->>>>>>> 9e77d5723265e5de71b22c00c38c8d790d18dd16
  
 ];
 
