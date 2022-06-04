@@ -13,7 +13,7 @@ export const SignOutButton = () => {
     const { instance } = useMsal();
     return (
         <Button 
-        variant="contained" color="secondary" 
+        variant="contained" color="primary" 
         onClick={()=>handleLogout(instance)}>
             <LogoutIcon />
         </Button>

@@ -16,7 +16,7 @@ export const SignInButton = () => {
     const { instance } = useMsal();
     return (
         <Button 
-        variant="contained" color="primary" 
+        variant="contained" color="secondary" 
         onClick={()=> {handleLogin(instance)}}>
             <LoginIcon />
         </Button>
