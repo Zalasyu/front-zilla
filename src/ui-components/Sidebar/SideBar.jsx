@@ -17,19 +17,19 @@ import './Sidebar.css';
 
 const routes = [
   {
-      //change icon to a graph
+      
     path: "/dashboard",
     name: "Dashboard",
     icon: <GoGraph />,
   },
   {
-    //change icon to a graph
+ 
   path: "/home",
   name: "Home",
   icon: <AiFillHome />,
 },
   {
-      //change icon to a calendar
+    
     path: "/yourevents",
     name: "Your Events",
     icon: <GoCalendar/>,
@@ -211,22 +211,10 @@ const SideBar = ({ children }) => {
 
 
  {/* If we are NOT authenticated, then we are showing the below routes */}
-   { !isAuthenticated &&
+   {/* { !isAuthenticated &&
           <section className="routes">
             {routes.map((route, index) => {
-              if (route.subRoutes) {
-                return (
-                  <SidebarMenu
-                    setIsOpen={setIsOpen}
-                    key={index}
-                    route={route}
-                    showAnimation={showAnimation}
-                    isOpen={isOpen}
-                  />
-               
-                ); 
-              
-              }
+          
 
               return (
                 <NavLink
@@ -261,7 +249,7 @@ const SideBar = ({ children }) => {
              
             })}
           </section>
- }
+ } */}
            {/* Sign in Sign Out button implemented into sidebar */}
           <div className="SignInSignOut">
             <SignInSignOutButton />
