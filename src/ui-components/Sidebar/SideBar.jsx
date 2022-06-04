@@ -104,6 +104,7 @@ const routes = [
   {
     path: "/support",
     name: "Support",
+<<<<<<< HEAD
     icon: 
     <Tooltip title="Click to contact support" arrow>
       <IconButton>
@@ -114,6 +115,10 @@ const routes = [
 
 
 
+=======
+    icon: <MdOutlineContactSupport />,
+  }
+>>>>>>> 9e77d5723265e5de71b22c00c38c8d790d18dd16
  
 ];
 
@@ -183,6 +188,9 @@ const SideBar = ({ children }) => {
                 </IconButton>
               </Tooltip>
             </div>
+          </div>
+          <div>
+            <SignInSignOutButton />
           </div>
         
 
@@ -288,10 +296,8 @@ const SideBar = ({ children }) => {
                     //for Sign In and Sign Out button in the sidebar
                       <motion.div
                         variants={loginLogoutAnimation}
-                        initial={false}
                         className="SignInSignOut"
                       >
-                        <SignInSignOutButton />
                         
                       </motion.div>
                      
