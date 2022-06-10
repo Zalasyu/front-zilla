@@ -1,7 +1,7 @@
-.dashboard-container{
+.dashboard-container {
     display: grid;
-  
-   
+
+
     row-gap: 60px;
     background-color: rgb(221, 221, 221);
     padding: 20px;
@@ -9,18 +9,21 @@
 
 }
 
-.dashboard-container .row{
+.dashboard-container .row {
     display: flex;
-  position: relative;
-  left:18%;
+    position: relative;
+    left: 12%;
 
- 
-    width: 80%; 
-   
-  
+
+    width: 80%;
+
+
 }
 
-.dashboard-container .row .column{
-      width: 100%; 
-} 
-
+.dashboard-container .row .column {
+    width: 100%;
+    
+    border: 5px solid  rgb(221, 138, 13);
+    padding: 50px;
+    margin: 20px;
+}
