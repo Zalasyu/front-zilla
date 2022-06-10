@@ -39,12 +39,18 @@
   .logo {
     font-size: 18px;
     line-height: 0;
+   
   }
   .bars {
     width: 30px;
   }
   .hide {
     display: none;
+  }
+
+  .icon-button{
+    color: #fff;
+    background-color: #fff;
   }
   
   /* .search {
@@ -68,6 +74,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    
   }
   .link {
     display: flex;
@@ -104,6 +111,7 @@
   .menu_item {
     display: flex;
     gap: 10px;
+   
   }
   .menu_container {
     display: flex;

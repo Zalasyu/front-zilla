@@ -6,13 +6,13 @@ import { MsalAuthenticationTemplate, useMsal, useAccount } from "@azure/msal-rea
 import { InteractionType, InteractionStatus, InteractionRequiredAuthError } from "@azure/msal-browser";
 
 // UI-Components
-import { Loading } from "../ui-components/Loading";
-import { ErrorComponent } from "../ui-components/ErrorComponent";
-import { DashboardData } from "../ui-components/DisplayData";
+import { Loading } from "../../ui-components/Loading";
+import { ErrorComponent } from "../../ui-components/ErrorComponent";
+import { DashboardData } from "../../ui-components/DisplayData";
 
 // API Call related Imports
-import { callApiWithToken } from "../fetch";
-import { loginRequest, protectedResources } from "../auth/authConfig";
+import { callApiWithToken } from "../../fetch";
+import { loginRequest, protectedResources } from "../../auth/authConfig";
 
 
 // Material-ui Imports
@@ -53,6 +53,31 @@ const DashContent = () => {
     return (
         <>
             { apiData ? <DashboardData apiData={apiData} /> : null}
+
+            <div className="container">
+                <div className="row">
+                    <div className="column">
+                        <h1>venue catalogue service</h1>
+                    </div>
+                    <div className="column">
+                    <h1>Artist catalogue service</h1>
+                        </div>
+                        <div className="column">
+                        <h1>Your fans</h1>
+                        </div>
+                </div>
+                <div className="row">
+                    <div className="column">
+                    <h1>Events calendar</h1>
+                    </div>
+                    <div className="column">
+                    <h1>Events near you</h1>
+                        </div>
+                        <div className="column">
+                        <h1>Venue Recommender System</h1>
+                        </div>
+                </div>
+            </div>
         </>
     )
 };

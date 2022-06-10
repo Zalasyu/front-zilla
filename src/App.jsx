@@ -8,7 +8,7 @@ import { b2cPolicies } from "./auth/authConfig";
 
 
 // Views/Pages Imports
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 import Home from "./Pages/Home";
 import { PageLayout } from './ui-components/PageLayout';
 
