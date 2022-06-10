@@ -13,6 +13,7 @@ import { DashboardData } from "../../ui-components/DisplayData";
 // API Call related Imports
 import { callApiWithToken } from "../../fetch";
 import { loginRequest, protectedResources } from "../../auth/authConfig";
+import "./Dashboard.css"
 
 
 // Material-ui Imports
@@ -54,7 +55,7 @@ const DashContent = () => {
         <>
             { apiData ? <DashboardData apiData={apiData} /> : null}
 
-            <div className="container">
+            <div className="dashboard-container">
                 <div className="row">
                     <div className="column">
                         <h1>venue catalogue service</h1>
