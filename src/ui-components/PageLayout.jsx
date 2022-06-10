@@ -1,12 +1,11 @@
 import React from "react";
-import { useIsAuthenticated } from "@azure/msal-react";
 //Sidebar implementation from Sidebar folder
 import SideBar from "./Sidebar/SideBar";
 
 
-
+// All pages that access any service 
+// will have the following components in here
 export const PageLayout = (props) => {
-    const isAuthenticated = useIsAuthenticated();
 
     return (
         <>

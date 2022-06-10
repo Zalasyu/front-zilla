@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import {Routes, Route } from "react-router-dom";
 
 // MSAL Imports
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from "@azure/msal-react";
+import { useMsal } from "@azure/msal-react";
 import { EventType, InteractionType } from "@azure/msal-browser";
 import { b2cPolicies } from "./auth/authConfig";
 
@@ -27,36 +27,6 @@ function Pages() {
    * that tells you what msal is currently doing. For more, visit:
    */
   const { instance } = useMsal();
-
-  /**
-   * Using the event API, you can register an event callback that will do something when an event is emitted. 
-   * When registering an event callback in a react component you will need to make sure you do 2 things.
-   * 1) The callback is registered only once
-   * 2) The callback is unregistered before the component unmounts.
-   */
-  useEffect(() => {
-    const callbackId = instance.addEventCallback((event) => {
-      if (event.eventType === EventType.LOGIN_FAILURE) {
-        if (event.error && event.error.errorMessage.indexOf("AADB2C90118") > -1) {
-          if (event.interactionType === InteractionType.Redirect) {
-            instance.loginRedirect(b2cPolicies.authorities.forgotPassword);
-          } else if (event.interactionType === InteractionType.Popup) {
-            instance.loginPopup(b2cPolicies.authorities.forgotPassword)
-              .catch(e => {
-                return;
-              });
-          }
-        }
-      }
-
-    });
-
-    return () => {
-      if (callbackId) {
-        instance.removeEventCallback(callbackId);
-      }
-    };
-  }, []);
 
   return (
       <Routes>

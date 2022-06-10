@@ -15,8 +15,6 @@ import { callApiWithToken } from "../fetch";
 import { loginRequest, protectedResources } from "../auth/authConfig";
 
 
-// Material-ui Imports
-
 const DashContent = () => {
     const { instance, accounts, inProgress } = useMsal();
     const account = useAccount(accounts[0] || {});
@@ -32,8 +30,9 @@ const DashContent = () => {
             // Get Access Token with current account with it's permitted scopes.
             instance.acquireTokenSilent(request)
             .then((response) => {
-                {console.log(response);}
-                callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
+                callApiWithToken(response.accessToken, 
+                    protectedResources.apiDashboard.endpoint)
+                    .then(response => setApiData(response));
             })
             .catch((err) => {
                 if(err instanceof InteractionRequiredAuthError){
@@ -42,7 +41,9 @@ const DashContent = () => {
                             scopes: protectedResources.apiDashboard.scopes
                         })
                         .then((response) => {
-                            callApiWithToken(response.accessToken, protectedResources.apiDashboard.endpoint).then(response => setApiData(response));
+                            callApiWithToken(response.accessToken, 
+                                protectedResources.apiDashboard.endpoint)
+                                .then(response => setApiData(response));
                         }).catch(error => console.log(error));
                     }
                 }

@@ -15,11 +15,11 @@ export default function Home() {
         <center>
             <Tooltip title="Click to call another service!" arrow>
                 <IconButton>
-                <Button component={Link} to="/dashboard" variant="contained" color="primary">
-                    <center>
-                        Request Access Token for Dashboard Service
-                    </center>
-                </Button>
+                    <Button component={Link} to="/dashboard" variant="contained" color="primary">
+                        <center>
+                            Request Access to Dashboard Service
+                        </center>
+                    </Button>
 
                 </IconButton>
 

@@ -1,5 +1,5 @@
 // React Imports
-import React, { useState } from "react";
+import React from "react";
 import { SignInButton } from "./SignInButton";
 import { SignOutButton } from "./SignOutButton";
 import { IconButton, Tooltip } from "@mui/material";
@@ -23,7 +23,8 @@ const SignInSignOutButton = () => {
             </IconButton>
         </Tooltip>
         );
-    } else if (inProgress !== InteractionStatus.Startup && inProgress !== InteractionStatus.HandleRedirect) {
+    } else if (inProgress !== InteractionStatus.Startup && 
+        inProgress !== InteractionStatus.HandleRedirect) {
         return( 
         
         <Tooltip title='Click to Sign In' arrow>
